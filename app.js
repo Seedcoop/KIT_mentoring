@@ -47,7 +47,7 @@ let timerInitial = 45;
 let timerId = null;
 
 function readTimerInput(fallback = 45) {
-  const seconds = Number(timerInput.value);
+  const seconds = Number(timerInput.value.replace(/\D/g, ""));
   if (!Number.isFinite(seconds) || seconds < 1) return fallback;
   return Math.min(999, Math.round(seconds));
 }
@@ -279,6 +279,7 @@ spinButton.addEventListener("click", spin);
 timerToggle.addEventListener("click", toggleTimer);
 timerReset.addEventListener("click", syncTimerFromInput);
 timerInput.addEventListener("input", () => {
+  timerInput.value = timerInput.value.replace(/\D/g, "").slice(0, 3);
   if (timerInput.value.trim() === "" || timerId) return;
   const seconds = readTimerInput(timerInitial || 45);
   timerInitial = seconds;

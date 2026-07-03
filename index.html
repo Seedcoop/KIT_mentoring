@@ -43,7 +43,7 @@
               <div class="timer-display" id="timerDisplay">45</div>
               <div class="timer-controls">
                 <label class="seconds-field" for="timerInput">
-                  <input id="timerInput" type="number" min="1" max="999" value="45" inputmode="numeric" aria-label="타이머 초 입력" />
+                  <input id="timerInput" type="text" value="45" inputmode="numeric" pattern="[0-9]*" maxlength="3" aria-label="타이머 초 입력" />
                   <span>초</span>
                 </label>
                 <button type="button" class="timer-button" id="timerReset">초기화</button>
