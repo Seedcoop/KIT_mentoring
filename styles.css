@@ -216,15 +216,17 @@ h1 {
 .live-zone {
   min-width: 0;
   display: grid;
-  gap: 12px;
+  gap: clamp(18px, 2.8vh, 30px);
   align-content: center;
-  padding-right: clamp(76px, 8vw, 132px);
+  justify-items: stretch;
+  padding-right: 0;
 }
 
 .keyword-display {
   display: grid;
-  gap: 4px;
+  gap: 8px;
   text-align: center;
+  min-width: 0;
 }
 
 .keyword-display p {
@@ -236,29 +238,39 @@ h1 {
 
 .keyword-display strong {
   display: block;
-  min-height: 1.95em;
+  min-height: 1.1em;
   color: var(--ink);
-  font-size: clamp(2.6rem, 5.5vw, 5.4rem);
-  line-height: 0.98;
+  font-size: clamp(2.7rem, 5vw, 5.1rem);
+  line-height: 1.02;
   font-weight: 900;
   word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.keyword-display strong.is-long {
+  font-size: clamp(2.25rem, 4.25vw, 4.35rem);
+}
+
+.keyword-display strong.is-extra-long {
+  font-size: clamp(1.85rem, 3.55vw, 3.5rem);
+  line-height: 1.08;
 }
 
 .timer-dock {
   display: grid;
   gap: 14px;
   justify-items: center;
-  transform: translateY(clamp(-76px, -7vh, -44px));
 }
 
 .timer-display {
-  min-width: min(100%, 290px);
+  width: min(100%, 320px);
   padding: 12px 16px 8px;
   border-radius: 34px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--ink);
   text-align: center;
-  font-size: clamp(5.8rem, 15vw, 10.5rem);
+  font-size: clamp(5.7rem, 13.5vw, 9.8rem);
   line-height: 0.9;
   font-weight: 900;
   box-shadow: inset 0 0 0 1px var(--line), 0 16px 38px rgba(67, 75, 83, 0.14);
@@ -267,7 +279,7 @@ h1 {
 .timer-controls {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(74px, 0.8fr) repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(96px, 0.85fr) repeat(2, minmax(86px, 1fr));
   gap: 8px;
 }
 
@@ -276,10 +288,10 @@ h1 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
   border-radius: 999px;
-  padding: 0 12px;
-  background: rgba(255, 255, 255, 0.78);
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.9);
   color: var(--ink);
   font-size: 1rem;
   font-weight: 900;
@@ -289,6 +301,7 @@ h1 {
 .seconds-field input {
   min-width: 0;
   width: 100%;
+  appearance: textfield;
   border: 0;
   padding: 0;
   background: transparent;
@@ -300,6 +313,7 @@ h1 {
 
 .seconds-field input::-webkit-outer-spin-button,
 .seconds-field input::-webkit-inner-spin-button {
+  appearance: none;
   margin: 0;
 }
 
@@ -309,13 +323,17 @@ h1 {
 
 .timer-button {
   min-height: 48px;
+  display: grid;
+  place-items: center;
   border: 0;
   border-radius: 999px;
   padding: 0 12px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--ink);
   font-size: 1rem;
+  line-height: 1;
   font-weight: 900;
+  white-space: nowrap;
   box-shadow: inset 0 0 0 1px var(--line);
 }
 
@@ -348,6 +366,18 @@ h1 {
 
   .timer-dock {
     transform: none;
+  }
+
+  .keyword-display strong {
+    font-size: clamp(2.6rem, 11vw, 4.7rem);
+  }
+
+  .keyword-display strong.is-long {
+    font-size: clamp(2.15rem, 9vw, 4rem);
+  }
+
+  .keyword-display strong.is-extra-long {
+    font-size: clamp(1.75rem, 7vw, 3.35rem);
   }
 }
 

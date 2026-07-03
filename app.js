@@ -22,7 +22,7 @@ const keywordSets = {
   career: {
     label: "진로",
     colors: ["#f28796", "#83ddd2", "#ffd866", "#f7c4b8", "#ffffff", "#25b7ad"],
-    items: ["궁금한 산업", "직업 전망", "희망 직업", "진학", "입시 준비", "자격증", "대외활동", "진로 고민이 시작된 순간"]
+    items: ["궁금한 산업", "직업 전망", "희망 직업", "진학", "입시 준비", "자격증", "대외활동", "최신 트렌드"]
   }
 };
 
@@ -218,7 +218,10 @@ function spin() {
 }
 
 function showItem(item) {
-  resultKeyword.textContent = item || "키워드";
+  const keyword = item || "키워드";
+  resultKeyword.textContent = keyword;
+  resultKeyword.classList.toggle("is-long", keyword.length >= 5);
+  resultKeyword.classList.toggle("is-extra-long", keyword.length >= 8);
 }
 
 function setTimer(seconds) {
