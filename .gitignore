@@ -1,0 +1,20 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local caches
+.cache/
+.parcel-cache/
+node_modules/
+
+# Temporary outputs
+dist/
+build/
+tmp/
+*.zip

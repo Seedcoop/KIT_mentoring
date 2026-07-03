@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KIT 4기 키워드 룰렛</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="KIT 4기 키워드 룰렛">
+      <section class="stage-panel">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">KIT 4기 멘토링</p>
+            <h1>키워드 룰렛</h1>
+          </div>
+          <button class="icon-button" id="fullscreenButton" type="button" title="전체 화면">
+            <span aria-hidden="true">⛶</span>
+          </button>
+        </header>
+
+        <nav class="category-bar" id="categoryBar" aria-label="키워드 박스 선택"></nav>
+
+        <section class="roulette-stage" aria-label="룰렛 영역">
+          <div class="wheel-zone">
+            <div class="wheel-wrap">
+              <div class="pointer" aria-hidden="true"></div>
+              <canvas id="wheelCanvas" width="1200" height="1200" aria-label="키워드 룰렛"></canvas>
+              <button class="spin-button" id="spinButton" type="button">
+                <span class="spin-label">START</span>
+                <span class="spin-sub">룰렛 돌리기</span>
+              </button>
+            </div>
+          </div>
+
+          <aside class="live-zone" aria-label="현재 키워드와 타이머">
+            <div class="keyword-display" aria-live="polite">
+              <p id="currentSetLabel">스몰토크</p>
+              <strong id="resultKeyword">급식</strong>
+            </div>
+
+            <div class="timer-dock" aria-label="타이머">
+              <div class="timer-display" id="timerDisplay">45</div>
+              <div class="timer-controls">
+                <label class="seconds-field" for="timerInput">
+                  <input id="timerInput" type="number" min="1" max="999" value="45" inputmode="numeric" aria-label="타이머 초 입력" />
+                  <span>초</span>
+                </label>
+                <button type="button" class="timer-button" id="timerReset">초기화</button>
+                <button type="button" class="timer-button primary" id="timerToggle">시작</button>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
