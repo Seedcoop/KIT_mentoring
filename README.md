@@ -10,10 +10,13 @@ KIT 4기 멘토링 운영을 위한 정적 웹 기반 키워드 룰렛입니다.
 - `styles.css`: 레이아웃과 시각 스타일
 - `app.js`: 룰렛, 카테고리, 타이머 동작
 - `assets/`: 배경 이미지와 Paperlogy 폰트
+- `KIT_mentoring_roulette_single.html`: CSS, JavaScript, 이미지, 폰트를 모두 포함한 단일 HTML 파일
 
 ## 실행 방법
 
 별도 설치 없이 `index.html` 파일을 브라우저에서 열면 실행됩니다.
+
+파일 하나만 공유해야 하는 경우에는 `KIT_mentoring_roulette_single.html`을 사용하면 됩니다.
 
 로컬 서버로 확인하려면 다음 명령을 사용할 수 있습니다.
 
